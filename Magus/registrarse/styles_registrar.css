@@ -1,0 +1,126 @@
+:root {
+    --radiant-orange: #ff3700;
+    --fog-gray: #F2F4F7;
+    --coal-black: #141517;
+    --text-color: #2c3e50;
+  }
+
+body{
+    Box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    margin: 0;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+img{
+    width: 70px;
+    height: 70px;
+  }
+
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+.conteiner{
+    display: flex;
+    height: 600px;
+    justify-content: center;
+}
+
+.input-registrar{
+    display: flex;
+    height: 40px;
+    width: 350px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: solid #d5d8db;
+
+}
+
+input{
+    padding-inline: 0;
+    padding-block: 0;
+}
+
+.input-telefono{
+    display: inline-flex;
+    width: 190px;
+    margin-right: 5px
+}
+
+/* Estilos Boton de enviar */
+.boton-enviar{
+    display: flex;
+    height: 45px;
+    width: 350px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: var(--radiant-orange);
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.boton-enviar:hover{
+    background-color: #c62d03;
+    transition: .5s;
+}
+/* --- */
+.texto-iniciar-sesion{
+    display: flex;
+}
+/* Estilos para el link para iniciar sesion */
+.link-iniciar-sesion{
+    display: flex;
+    text-decoration: none;
+    color: var(--radiant-orange);
+}
+
+.link-iniciar-sesion:hover{
+    color: #c62d03;
+    transition: .5s;
+}
+/* --- */
+
+/* Estilos del selecgor de paises */
+.opciones-registrar{
+    height: 40px;
+    width: 150px;
+    border: solid #d5d8db;
+    cursor: pointer;
+}
+/* --- */
+
+/* Estilos para el footer */
+.footer-conteiner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    background-color: var(--radiant-orange);
+    height: 100px;
+}
+
+.footer-link{
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.footer-link:hover{
+    text-decoration: underline;
+}
+
+/* --- */
