@@ -37,13 +37,25 @@ h1{
 
 .input-registrar{
     display: flex;
-    height: 40px;
-    width: 350px;
+    height: 45px;
+    width: 355px;
     margin-top: 30px;
     margin-bottom: 10px;
     border-radius: 4px;
     border: solid #d5d8db;
+    box-sizing: border-box;
+    padding-left: 10px;
+    font-size: 15px;
+}
 
+.input-registrar:placeholder-shown{
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+.input-registrar:focus{
+    border: 2px solid var(--radiant-orange); /* Cambia el color y grosor del borde */
+    outline: none;
 }
 
 input{
@@ -54,14 +66,32 @@ input{
 .input-telefono{
     display: inline-flex;
     width: 190px;
-    margin-right: 5px
+    margin-right: 5px;
 }
+
+/* Estilos del selecgor de estados */
+.opciones-registrar{
+    height: 45px;
+    width: 155px;
+    border: solid #d5d8db;
+    cursor: pointer;
+    border-radius: 5px;
+    padding-left: 10px;
+    
+}
+.opciones-registrar:focus{
+    border: 2px solid var(--radiant-orange); /* Cambia el color y grosor del borde */
+    outline: none;
+    padding-left: 10px;
+}
+
+/* --- */
 
 /* Estilos Boton de enviar */
 .boton-enviar{
     display: flex;
     height: 45px;
-    width: 350px;
+    width: 355px;
     margin-top: 10px;
     margin-bottom: 10px;
     background-color: var(--radiant-orange);
@@ -83,6 +113,7 @@ input{
 /* Estilos para el link para iniciar sesion */
 .link-iniciar-sesion{
     display: flex;
+    margin-left: 10px;
     text-decoration: none;
     color: var(--radiant-orange);
 }
@@ -93,34 +124,37 @@ input{
 }
 /* --- */
 
-/* Estilos del selecgor de paises */
-.opciones-registrar{
-    height: 40px;
-    width: 150px;
-    border: solid #d5d8db;
-    cursor: pointer;
-}
-/* --- */
+
 
 /* Estilos para el footer */
 .footer-conteiner{
     display: flex;
+    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
     margin-top: 200px;
     background-color: var(--radiant-orange);
     height: 100px;
-}
-
-.footer-link{
-    color: white;
-    text-decoration: none;
+  }
+  
+  .footer-link {
+    display: inline-block;
     margin-left: 20px;
     margin-right: 20px;
-}
-
-.footer-link:hover{
+    text-decoration: none;
+    color: white;
+  }
+  
+  
+  .footer-link:hover{
     text-decoration: underline;
-}
-
-/* --- */
+  }
+  
+  .copyright{
+    color: white;
+    font-size: 13px;
+    margin: 0;
+    margin-top: 20px;
+  }
+  
+  /* --- */

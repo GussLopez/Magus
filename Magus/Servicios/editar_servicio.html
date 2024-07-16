@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magus</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles_editar_s.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,7 +25,7 @@
           </label>
         </div>
         <div class="nav-links">
-          <a href="#">Mis Servicios</a>
+          <a href="/Servicios/index.html">Mis Servicios</a>
           <a href="#">Perfil</a>
           <a href="#">Sobre Nosotros</a>
         </div>
@@ -33,15 +33,15 @@
   </head>
   
   <div class="servicios-conteiner">
-    <p class="breadcrumbs"><a href="/">Mi cuenta</a> > <a href="#">Tus servicios</a></p>
+    <p class="breadcrumbs"><a href="/">Mi cuenta</a> > <a href="/Servicios/index.html">Tus servicios</a> > <a href="editar_servicio.html"> Editar servicio</a></p>
     <div class="row-h1">
-      <h1>Tus servicios</h1>
+      <h1>Editar servicio</h1>
     </div>
   </div>
   <!-- División del h1 -->
   <div class="servicios-section-line">
     <ul>
-      <li><a href="/Servicios/publicar_servicio/publicar_servicio.html">+ Publicar</a></li>
+      <li>Servicios</li>
     </ul> 
   </div>
   <!-- tabla servicios -->
@@ -56,18 +56,14 @@
         <p class="nombre-servicio">Nombre del servicio</p>
         <div class="servicio-img">
           <img src="/icono/busqueda.png" alt="" class="servicio-img">
-          <p class="descripcion-servicio">
-            Descripción del servicio Lorem ipsum dolor sit amet 
-            consectetur adipisicing elit. Explicabo labore quis 
-            consequatur quos, expedita nobis iste ullam 
-            voluptatibus impedit consectetur.
-          </p>    
+          <textarea name="" id="" class="descripcion-input" placeholder="Descripción del servicio" ></textarea>
         </div>
       </div>
     </div>
     <div class="opciones-servicio">
-        <a href="editar_servicio.html"><img src="/icono/lapiz-de-usuario.png" alt="" class="img-boton">Editar servicio</a>
-        <a href="#"><img src="/icono/basura.png" alt="" class="img-boton">Eliminar servicio</a>
+      <div class="opciones-conteiner">
+        <a href="index.html">Guardar cambios</a>
+      </div>
     </div>
 
   </div>
