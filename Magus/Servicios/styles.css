@@ -45,7 +45,7 @@ body {
     border: 1px solid #ffffff;
     font-size: 15px;
     padding-left: 2.5em; /* Add padding to the left to make space for the icon */
-    background: url('/icono/busqueda.png') no-repeat 0.5em center; /* Position the icon */
+    background: url('/img/busqueda.png') no-repeat 0.5em center; /* Position the icon */
     background-size: 1.5em; /* Adjust the size of the icon */
     background-color: white;
 }
@@ -111,8 +111,7 @@ body {
 .servicios-section-line ul a{
     text-decoration: none;
     display: flex;
-    height: 40px;
-    width: 100px;
+    padding: 10px;
     background-color: var(--radiant-orange);
     color: white;
     justify-content: center;
@@ -135,6 +134,7 @@ body {
     width: 920px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 70px;
 }
 
 .servicio-realizado{
@@ -156,16 +156,28 @@ body {
     padding-right: 10px;
 }
 
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.precio-servicio{
+    font-size: 20px;
+    margin-right: 20px;
+    align-self: center;
+}
+
 .servicio-img{
     display: flex;
     flex-flow: row nowrap;
+    align-items: center;
 
 }
 
 .servicio-img img{
     width: 100px;
     height: 100px;
-    margin-left: 10px;
+    margin-left: 30px;
 }
 
 .info-conteiner{
@@ -176,35 +188,40 @@ body {
     flex-flow: column;
 }
 
-.nombre-servicio{
-    font-weight: bold; 
-    font-size: 20px;
+.ubicacion-servicio{
+    font-size: 18px;
     margin-left: 20px;
 }
 
 .descripcion-servicio{
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 40px;
+    margin-right: 20px;
 }
 
 .opciones-servicio{
-    height: 100px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
 }
-.opciones-servicio a{
+.opciones-servicio a,button{
     display: flex;
     color: white;
-    background-color: red;
     border-radius: 5px;
     text-decoration: none;
-    margin: 10px;
     padding: 10px 10px 10px 5px;
     align-content: center;
     align-items: center;
+    font-size: 16px;
 }
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-1px); }
+    20%, 40%, 60%, 80% { transform: translateX(1px); }
+}
+  
 
 .img-boton{
     width: 25px;
@@ -213,8 +230,26 @@ body {
     padding-right: 5px;
 }
 
+
 .opciones-servicio a:hover{
-    background-color: rgb(205, 4, 4);
     transition: all ease .5s;
-    transform: scale(1.3);
+    background-color: #c32a00;
+}
+
+
+
+.boton-editar {
+    background-color: var(--radiant-orange);
+    margin-right: 300px;
+}
+
+.boton-borrar{
+    border: 0;
+    background-color: var(--radiant-orange);
+}
+
+.boton-borrar:hover{
+    background-color: #c32a00;
+    animation: shake .5s;
+    animation-iteration-count: 1;
 }

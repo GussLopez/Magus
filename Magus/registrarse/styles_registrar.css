@@ -22,7 +22,12 @@ body{
 img{
     width: 70px;
     height: 70px;
-  }
+    transition: all .5s ease-in-out;
+}
+img:hover{
+    transform: scale(1.1);
+}
+
 
 h1{
     display: flex;
@@ -135,26 +140,26 @@ input{
     margin-top: 200px;
     background-color: var(--radiant-orange);
     height: 100px;
-  }
+}
   
-  .footer-link {
+.footer-link {
     display: inline-block;
     margin-left: 20px;
     margin-right: 20px;
     text-decoration: none;
     color: white;
-  }
+}
   
   
-  .footer-link:hover{
+.footer-link:hover{
     text-decoration: underline;
-  }
+}
   
-  .copyright{
+.copyright{
     color: white;
     font-size: 13px;
     margin: 0;
     margin-top: 20px;
-  }
+}
   
   /* --- */

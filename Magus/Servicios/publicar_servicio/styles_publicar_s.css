@@ -132,7 +132,7 @@ body {
     border-bottom: solid 1px rgb(200, 199, 199);
 }
 
-.categorias-menu ul li a {
+.categorias-menu ul li button {
     display: flex;
     height: 48.8px;
     width: 645px;
@@ -143,14 +143,18 @@ body {
     padding: 0;
     padding-left: 15px;
     transition: background-color  .3s ease;
+    background-color: white;
+    border: 0;
+    border-bottom: solid 1px rgb(200, 199, 199);
+    font-size: 16px;
 }
 
-.categorias-menu ul li a:hover{
+.categorias-menu ul li button:hover{
     background-color: var(--text-color);
     color: white;
 }
 
-.categorias-menu ul li a:focus{
+.categorias-menu ul li button:focus{
     background-color: var(--radiant-orange);
     color: white;
 }

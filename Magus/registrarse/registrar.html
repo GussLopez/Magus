@@ -1,53 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="styles_registrar.css"/>
+    <link rel="stylesheet" href="styles_registrar.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="/icono/logo_favi.ico" type="image/x-icon">
-</head>
-<body>
-    <div class="logo">
-        <img src="/icono/Logo M.png" alt="Logo Magus">
-    </div>
-    <h1>Registrarse</h1>
-    <div class="conteiner">
-        <label for="" class="forms">
-            <input type="text" placeholder="Nombre" class="input-registrar">
-            <input type="text" placeholder="Apellido" class="input-registrar">
-            <input type="email" placeholder="Correo" class="input-registrar">
-            <input type="password" placeholder="Contraseña" class="input-registrar">
-            <input type="tel" placeholder="Telefono" class="input-registrar input-telefono">
+    <link rel="icon" href="/icono/logo_favi.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <main>
+      <div class="logo">
+        <img src="/img/Logo M.png" alt="Logo Magus" />
+      </div>
+      <section>
+        <h1>Registrarse</h1>
+        <div class="conteiner">
+          <form action="" class="forms">
+            <input type="text" placeholder="Nombre" class="input-registrar" />
+            <input type="text" placeholder="Apellido" class="input-registrar" />
+            <input type="email" placeholder="Correo" class="input-registrar" />
+            <input
+              type="password"
+              placeholder="Contraseña"
+              class="input-registrar"
+            />
+            <input
+              type="tel"
+              placeholder="Telefono"
+              class="input-registrar input-telefono"
+            />
             <select name="Ciudad" id="" class="opciones-registrar">
-                <option value="select">Estado...</option>
-                <option>Quintana Roo</option>
-                <option>Campeche</option>
-                <option>Yucatan</option>
+              <option value="select">Estado...</option>
+              <option>Quintana Roo</option>
+              <option>Campeche</option>
+              <option>Yucatan</option>
             </select>
-            <input type="submit" value="Registrarse" class="boton-enviar">
-            <p class="texto-iniciar-sesion">¿Ya tienes cuenta? <a href="/iniciar_sesion/iniciar_sesion.html" class="link-iniciar-sesion"> Inicia sesión</a></p>
-        </label>
-        
-    </div>
-    <footer>
-        <div class="footer-conteiner">
-            <div>
-              <a href="#" class="footer-link">Terminos y condiciones</a><a href="#" class="footer-link">Acerca de</a>
-            </div>
-            <div>
-              <p class="copyright">
-                Copyright © 2024 Blvd. Luis Donaldo Colosio, 
-                77500 Cancún, Quintana Roo, México
-              </p>
-            </div>
+            <input type="submit" value="Registrarse" class="boton-enviar" />
+            <p class="texto-iniciar-sesion">
+              ¿Ya tienes cuenta?
+              <a
+                href="/iniciar_sesion/iniciar_sesion.html"
+                class="link-iniciar-sesion"
+              >
+                Inicia sesión</a
+              >
+            </p>
+          </form>
         </div>
-      </footer>
-</body>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-conteiner">
+        <div>
+          <a href="#" class="footer-link">Terminos y condiciones</a
+          ><a href="#" class="footer-link">Acerca de</a>
+        </div>
+        <div>
+          <p class="copyright">
+            Copyright © 2024 Todos los derechos reservados
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
