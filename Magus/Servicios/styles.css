@@ -118,12 +118,21 @@ body {
     align-content: center;
     align-items: center;
     border-radius: 5px;
+    transition: background-color ease-in-out .3s;
+
 }
 
 .servicios-section-line ul a:hover{
-    background-color: #c42e05;
-    transition: background-color ease-in-out .4s;
+    background-color: #e13202;
 }
+
+/* h2{
+    display: flex;
+    margin-top: 100px;
+    justify-content: center;
+    font-size: 5px;
+    color: rgb(177, 177, 177);
+} */
 
 /* Tablas Servicios */
 
@@ -233,12 +242,12 @@ h2 {
 
 .opciones-servicio a:hover{
     transition: all ease .5s;
-    background-color: #c32a00;
+    background-color: #e13202;
 }
 
 
 
-.boton-editar {
+.boton-editar { 
     background-color: var(--radiant-orange);
     margin-right: 300px;
 }
@@ -246,10 +255,12 @@ h2 {
 .boton-borrar{
     border: 0;
     background-color: var(--radiant-orange);
+    cursor: pointer;
 }
 
 .boton-borrar:hover{
-    background-color: #c32a00;
+    transition: all .3s ease;
+    background-color: #e13202;
     animation: shake .5s;
     animation-iteration-count: 1;
 }
