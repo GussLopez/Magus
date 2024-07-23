@@ -1,0 +1,80 @@
+:root {
+  --radiant-orange: #ff3700;
+  --fog-gray: #F2F4F7;
+  --coal-black: #141517;
+  --text-color: #2c3e50;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.nav-conteiner {
+  background-color: var(--radiant-orange);
+  display: flex;
+  justify-content: space-between;
+  height: 6em;
+  align-items: center; /* Ensure items are centered vertically */
+  padding: 0 1em; /* Add some padding to the container */
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 3em;
+  text-decoration: none;
+  transition: transform 0.3s ease; /* Add transition for smooth scaling */
+}
+
+.logo:hover {
+  transform: scale(1.25); /* Scale up the logo on hover */
+}
+
+.busqueda {
+  display: flex;
+  align-items: center;
+}
+
+.buscador {
+  width: 30em;
+  height: 3em;
+  border-radius: 20px;
+  border: 1px solid #ffffff;
+  font-size: 15px;
+  padding-left: 2.5em; /* Add padding to the left to make space for the icon */
+  background: url('/icono/busqueda.png') no-repeat 0.5em center; /* Position the icon */
+  background-size: 1.5em; /* Adjust the size of the icon */
+  background-color: white;
+}
+
+.buscador:hover {
+  cursor: pointer;
+}
+
+.buscador:placeholder-shown {
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  margin-right: 3em;
+}
+
+.nav-links a{
+  margin-left: 1em; /* Add some space between the links */
+  color: white;
+  text-decoration: none;
+  align-self: center; /* Ensure links are centered vertically */
+  padding: 10px;
+  border-radius: 15px;
+}
+
+
+.nav-links a:hover{
+  transition: .5s ease-in-out;
+  background-color: #2c3e50;
+}
+
