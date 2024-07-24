@@ -27,7 +27,7 @@
           </label>
         </div>
         <div class="nav-links">
-          <a href="Servicios/index.html">Mis Servicios</a>
+          <a href="Servicios/servicios.php">Mis Servicios</a>
           <a href="#">Perfil</a>
           <a href="#">Sobre Nosotros</a>
         </div>
