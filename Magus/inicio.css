@@ -1,0 +1,154 @@
+:root {
+    --radiant-orange: #ff3700;
+    --fog-gray: #F2F4F7;
+    --coal-black: #141517;
+    --text-color: #2c3e50;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.nav-conteiner {
+    background-color: var(--radiant-orange);
+    display: flex;
+    justify-content: space-between;
+    height: 6em;
+    align-items: center; 
+    padding: 0 1em; 
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 3em;
+    text-decoration: none;
+    transition: transform 0.3s ease; /* Add transition for smooth scaling */
+}
+
+.logo:hover {
+    transform: scale(1.25);
+}
+
+.busqueda {
+    display: flex;
+    align-items: center;
+}
+
+.buscador {
+    width: 30em;
+    height: 3em;
+    border-radius: 20px;
+    border: 1px solid #ffffff;
+    font-size: 15px;
+    padding-left: 2.5em; /* Add padding to the left to make space for the icon */
+    background: url('img/busqueda.png') no-repeat 0.5em center; /* Position the icon */
+    background-size: 1.5em; /* Adjust the size of the icon */
+    background-color: white;
+}
+
+.buscador:hover {
+    cursor: pointer;
+}
+
+.buscador:placeholder-shown {
+    font-weight: bold;
+}
+
+.buscador:focus{
+    outline: none;
+    border: solid 2px gainsboro;
+}
+
+.nav-links {
+    display: flex;
+    margin-right: 3em;
+}
+
+.nav-links a{
+    margin-left: 1em; /* Add some space between the links */
+    color: white;
+    text-decoration: none;
+    align-self: center; /* Ensure links are centered vertically */
+    padding: 10px;
+    border-radius: 15px;
+}
+
+
+.nav-links a:hover{
+    transition: .5s ease-in-out;
+    background-color: #2c3e50;
+}
+
+/* MAIN */
+.boton-cerrar-sesion {
+    position: absolute;
+    top: 105px;
+    right: 1em;
+    background-color: var(--radiant-orange);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10; /* Ensure it is above other elements */
+    transition: all ease-in-out .2s;
+    text-decoration: none;
+    font-weight: bold;
+}
+.boton-cerrar-sesion:hover {
+    background-color: #6b1801;
+}
+
+.contenido-titulo{
+    background-image:   url(img/servidores.jpg);
+    text-align: center;
+    align-content: center;
+    height: 450px;
+    position: relative; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 2rem;
+}
+
+.contenido-titulo h1 {
+    margin: 0;
+    font-size: 3rem;
+    color: white;
+}
+
+/* Estilos para el footer */
+.footer-conteiner{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    background-color: var(--radiant-orange);
+    height: 100px;
+}
+  
+.footer-link {
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+}
+  
+  
+.footer-link:hover{
+    text-decoration: underline;
+}
+  
+.copyright{
+    color: white;
+    font-size: 13px;
+    margin: 0;
+    margin-top: 20px;
+}
+  
+  /* --- */

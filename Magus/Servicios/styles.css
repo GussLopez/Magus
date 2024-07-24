@@ -45,7 +45,7 @@ body {
     border: 1px solid #ffffff;
     font-size: 15px;
     padding-left: 2.5em; /* Add padding to the left to make space for the icon */
-    background: url('/img/busqueda.png') no-repeat 0.5em center; /* Position the icon */
+    background: url('../img/busqueda.png') no-repeat 0.5em center; /* Position the icon */
     background-size: 1.5em; /* Adjust the size of the icon */
     background-color: white;
 }
@@ -125,14 +125,6 @@ body {
 .servicios-section-line ul a:hover{
     background-color: #e13202;
 }
-
-/* h2{
-    display: flex;
-    margin-top: 100px;
-    justify-content: center;
-    font-size: 5px;
-    color: rgb(177, 177, 177);
-} */
 
 /* Tablas Servicios */
 

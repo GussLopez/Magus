@@ -1,0 +1,212 @@
+:root {
+    --radiant-orange: #ff3700;
+    --fog-gray: #F2F4F7;
+    --coal-black: #141517;
+    --text-color: #2c3e50;
+  }
+
+body{
+    Box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    margin: 0;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+img{
+    width: 70px;
+    height: 70px;
+    transition: all .5s ease-in-out;
+}
+img:hover{
+    transform: scale(1.1);
+}
+
+
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+.conteiner{
+    display: flex;
+    height: 600px;
+    justify-content: center;
+}
+
+.input-registrar{
+    display: flex;
+    height: 45px;
+    width: 355px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: solid #d5d8db;
+    box-sizing: border-box;
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+.input-registrar:placeholder-shown{
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+.input-registrar:focus{
+    border: 2px solid var(--radiant-orange); /* Cambia el color y grosor del borde */
+    outline: none;
+}
+
+input{
+    padding-inline: 0;
+    padding-block: 0;
+}
+
+.input-telefono{
+    display: inline-flex;
+    width: 190px;
+    margin-right: 5px;
+}
+
+/* Estilos del selecgor de estados */
+.opciones-registrar{
+    height: 45px;
+    width: 155px;
+    border: solid #d5d8db;
+    cursor: pointer;
+    border-radius: 5px;
+    padding-left: 10px;
+    
+}
+.opciones-registrar:focus{
+    border: 2px solid var(--radiant-orange); /* Cambia el color y grosor del borde */
+    outline: none;
+    padding-left: 10px;
+}
+
+/* --- */
+
+/* Estilos Boton de enviar */
+.boton-enviar{
+    display: flex;
+    height: 45px;
+    width: 355px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: var(--radiant-orange);
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.boton-enviar:hover{
+    background-color: #c62d03;
+    transition: .5s;
+}
+/* --- */
+.texto-iniciar-sesion{
+    display: flex;
+}
+/* Estilos para el link para iniciar sesion */
+.link-iniciar-sesion{
+    display: flex;
+    margin-left: 10px;
+    text-decoration: none;
+    color: var(--radiant-orange);
+}
+
+.link-iniciar-sesion:hover{
+    color: #c62d03;
+    transition: .5s;
+}
+/* --- */
+
+
+/* HH */
+
+
+
+
+/* Estilos para el footer */
+.footer-conteiner{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    background-color: var(--radiant-orange);
+    height: 100px;
+}
+  
+.footer-link {
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+}
+  
+  
+.footer-link:hover{
+    text-decoration: underline;
+}
+  
+.copyright{
+    color: white;
+    font-size: 13px;
+    margin: 0;
+    margin-top: 20px;
+}
+  
+  /* --- */
+
+
+/* Estilos de errores */
+
+
+.error-summary{
+    position: absolute;
+    margin-top: 500px;
+}
+
+.error-summary ul{
+    list-style: none;
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.error-summary ul li{
+    padding: 5px;
+    justify-self: center;
+    font-weight: bold;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    bottom: -18px; /* Ajusta este valor según tu diseño */
+    left: 0;
+    visibility: hidden;
+}
+
+.success-message{
+    position: absolute;
+    margin-top: 500px;
+    background-color: green;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
