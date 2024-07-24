@@ -1,0 +1,203 @@
+/* Variables de color */
+:root {
+    --radiant-orange: #ff3700;
+    --fog-gray: #F2F4F7;
+    --coal-black: #141517;
+    --text-color: #2c3e50;
+}
+
+/* Estilos generales */
+body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: var(--fog-gray);
+}
+
+/* Estilos de la navegación */
+.nav-conteiner {
+    background-color: var(--radiant-orange);
+    display: flex;
+    justify-content: space-between;
+    height: 6em;
+    align-items: center; /* Asegura que los elementos estén centrados verticalmente */
+    padding: 0 1em; /* Agrega un poco de relleno al contenedor */
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 3em;
+    text-decoration: none;
+    transition: transform 0.3s ease; /* Agrega transición para el escalado suave */
+}
+
+.logo:hover {
+    transform: scale(1.25); /* Escala el logo al pasar el ratón */
+}
+
+.nav-links {
+    display: flex;
+    margin-right: 3em;
+}
+
+.nav-links a {
+    margin-left: 1em; /* Agrega espacio entre los enlaces */
+    color: white;
+    text-decoration: none;
+    align-self: center; /* Asegura que los enlaces estén centrados verticalmente */
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.nav-links a:hover {
+    transition: .5s ease-in-out;
+    background-color: #2c3e50;
+}
+
+.boton-cerrar-sesion {
+    position: absolute;
+    top: 105px;
+    right: 1em;
+    background-color: var(--radiant-orange);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.boton-cerrar-sesion:hover {
+    background-color: #e03e00;
+}
+
+/* Estilos del slider */
+.slider {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    height: 450px; /* Ajusta la altura del slider según sea necesario */
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; /* Asegúrate de que el slider ocupa el ancho completo */
+}
+
+.slides img {
+    height: 100%;
+    width: 100%; /* Asegura que las imágenes ocupen el ancho completo */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsionar */
+    flex-shrink: 0; /* Evita que las imágenes se compriman */
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.8);
+    border: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Estilos del contenedor de servicios */
+#services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenedor de servicios horizontalmente */
+    margin-bottom: 3rem; /* Espacio entre los servicios y el pie de página */
+}
+
+/* Estilos del título de servicios */
+#services-container h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: var(--coal-black);
+    text-align: center; /* Centra el título */
+}
+
+/* Estilos para los servicios */
+#services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Espacio entre los servicios */
+    max-width: 1200px; /* Ancho máximo para centrar los servicios y dejar espacio en blanco a los lados */
+    width: 100%;
+    justify-content: center; /* Centra los servicios horizontalmente */
+}
+
+/* Estilos para los elementos de servicio */
+.service-item {
+    width: calc(33.333% - 1rem); /* Ajusta el ancho de cada servicio */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding: 1rem;
+    background-color: #fff;
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 350px; /* Altura mínima para los items del servicio */
+}
+
+/* Asegura que las imágenes tengan el mismo tamaño */
+.service-item img {
+    width: 100%;
+    height: 200px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsionar */
+    border-bottom: 1px solid #ddd; /* Línea divisoria entre la imagen y el texto */
+}
+
+/* Ajusta el margen inferior del último elemento en la fila */
+#services .service-item:nth-child(3n) {
+    margin-right: 0; /* Elimina el margen derecho para el último elemento en cada fila de 3 */
+}
+
+/* Ajusta el margen inferior para todos los elementos */
+.service-item {
+    margin-bottom: 2rem; /* Espacio en la parte inferior de los cuadros de servicios */
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: var(--radiant-orange);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 600px) {
+    #services {
+        flex-direction: column;
+    }
+
+    .service-item {
+        width: 100%;
+        height: auto; /* Ajusta la altura en pantallas pequeñas */
+    }
+
+    .service-item img {
+        height: 150px; /* Ajusta la altura de las imágenes en pantallas pequeñas */
+    }
+}
