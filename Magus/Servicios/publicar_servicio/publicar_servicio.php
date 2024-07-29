@@ -1,4 +1,16 @@
 <?php
+
+session_start();
+if (!isset($_SESSION['Correo'])) {
+    header("Location: ../../index.php");
+    exit();
+}
+
+if (!isset($_SESSION['id_usuario'])) {
+    header("Location: ../../index.php?error=Usuario no autenticado");
+    exit();
+}
+
 $errorMessages = [];
 $successMessage = '';
 
@@ -8,7 +20,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = trim($_POST["nombre"]);
     $direccion = trim($_POST["direccion"]);
     $costo = trim($_POST["costo"]);
+    $imagen_url = trim($_POST["imagen_url"]);
     $descripcion = trim($_POST["descripcion"]);
+    $id_usuario = $_SESSION['id_usuario']; // Obtener el id_usuario de la sesión
+
+    // Verificar que id_usuario no sea null
+    if (empty($id_usuario)) {
+        $errorMessages['general'] = "ID de usuario no válido.";
+    }
 
     // Validar que todos los campos estén llenos
     if (empty($categoria)) {
@@ -24,6 +43,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errorMessages['costo'] = "El costo es obligatorio.";
     } elseif (!is_numeric($costo)) {
         $errorMessages['costo'] = "El costo debe ser un número.";
+    }
+    if (empty($imagen_url)) {
+        $errorMessages['imagen_url'] = "La imagen es obligatoria.";
     }
     if (empty($descripcion)) {
         $errorMessages['descripcion'] = "La descripción es obligatoria.";
@@ -44,9 +66,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Conexión fallida: " . $conn->connect_error);
         }
 
-        $sql = "INSERT INTO servicios (Categoria_Servicio, Nombre, Ubicacion_Servicio, Costo, Descripcion) VALUES (?, ?, ?, ?, ?)";
+        // Insertar el servicio incluyendo el id_usuario
+        $sql = "INSERT INTO servicios (id_usuario, Categoria_Servicio, Nombre, Ubicacion_Servicio, Costo, imagen_url, Descripcion) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sssss", $categoria, $nombre, $direccion, $costo, $descripcion);
+        $stmt->bind_param("issssss", $id_usuario, $categoria, $nombre, $direccion, $costo, $imagen_url, $descripcion);
 
         if ($stmt->execute()) {
             $successMessage = "Servicio publicado exitosamente.";
@@ -95,16 +118,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?= $successMessage ?>
         </div>
     <?php endif; ?>
-    <head>
+    <header>
       <div class="nav-conteiner">
-        <a href="/" class="logo">Magus</a>
+        <a href="../../inicio.php" class="logo">Magus</a>
         <div class="nav-links">
-          <a href="/Servicios/index.html">Mis Servicios</a>
-          <a href="#">Perfil</a>
-          <a href="#">Sobre Nosotros</a>
+          <a href="../servicios.php">Mis Servicios</a>
+          <a href="../../Usuario/perfil.html">Perfil</a>
+          <a href="../../sobre_nosotros/index.html">Sobre Nosotros</a>
         </div>
       </div>
-    </head>
+    </header>
 
     <div class="servicios-conteiner">
       <p class="breadcrumbs">
@@ -168,6 +191,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php if(isset($errorMessages['costo'])): ?>
                     <span class="error-costo"><?= $errorMessages['costo'] ?></span>
                 <?php endif; ?>
+                <!--  -->
+                <input type="text" name="imagen_url" placeholder="URL" class="input-imagen" value="<?= isset($_POST['imagen_url']) ? htmlspecialchars($_POST['imagen_url']) : '' ?>" />
+                <?php if(isset($errorMessages['imagen_url'])): ?>
+                    <span class="error-imagen"><?= $errorMessages['imagen_url'] ?></span>
+                <?php endif; ?>
+                <!--  -->
                 <textarea name="descripcion" placeholder="Descripción"><?= isset($_POST['descripcion']) ? htmlspecialchars($_POST['descripcion']) : '' ?></textarea>
                 <?php if(isset($errorMessages['descripcion'])): ?>
                     <span class="error-descripcion"><?= $errorMessages['descripcion'] ?></span>
@@ -179,18 +208,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="submit" value="Publicar" class="boton-publicar" />
         </div>
     </form>
-    <footer>
-      <div class="footer-conteiner">
-        <div>
-          <a href="#" class="footer-link">Terminos y condiciones</a
-          ><a href="#" class="footer-link">Acerca de</a>
-        </div>
-        <div>
-          <p class="copyright">
-            Copyright © 2024 Todos los derechos reservados
-          </p>
-        </div>
-      </div>
+    <footer class="footer">
+        <p>© 2024 Magus. Todos los derechos reservados.</p>
     </footer>
   </body>
 </html>

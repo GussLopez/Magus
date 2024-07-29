@@ -9,6 +9,7 @@ body {
     font-family: "Lato", sans-serif;
     margin: 0;
     box-sizing: border-box;
+    background-color: var(--fog-gray);
 }
 
 .nav-conteiner {
@@ -25,6 +26,7 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-left: 3em;
+    margin-right: 100px;
     text-decoration: none;
     transition: transform 0.3s ease; /* Add transition for smooth scaling */
 }
@@ -39,13 +41,13 @@ body {
 }
 
 .buscador {
-    width: 30em;
+    width: 450px;
     height: 3em;
     border-radius: 20px;
     border: 1px solid #ffffff;
     font-size: 15px;
     padding-left: 2.5em; /* Add padding to the left to make space for the icon */
-    background: url('img/busqueda.png') no-repeat 0.5em center; /* Position the icon */
+    background: url('img/busqueda.png') no-repeat 0.5em center; 
     background-size: 1.5em; /* Adjust the size of the icon */
     background-color: white;
 }
@@ -83,6 +85,49 @@ body {
     background-color: #2c3e50;
 }
 
+/* Estilo de los resultados */
+#resultados {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; /* Centra el contenedor de resultados horizontalmente */
+}
+
+#resultados ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#resultados li {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+#resultados li h3 {
+    margin: 0;
+    color: #007BFF;
+}
+
+#resultados li p {
+    margin: 5px 0 0 0;
+    color: #666;
+}
+
+#resultados li img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-left: 20px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+
+
 /* MAIN */
 .boton-cerrar-sesion {
     position: absolute;
@@ -104,8 +149,8 @@ body {
 }
 
 .contenido-titulo{
-    background-image:   url(img/servidores.jpg);
-    text-align: center;
+   background-image:   url(img/servidores.jpg);
+     text-align: center;
     align-content: center;
     height: 450px;
     position: relative; 
@@ -120,35 +165,81 @@ body {
     color: white;
 }
 
-/* Estilos para el footer */
-.footer-conteiner{
+/* Estilos del contenedor de servicios */
+#services-container {
     display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 200px;
-    background-color: var(--radiant-orange);
-    height: 100px;
+    flex-direction: column;
+    align-items: center; /* Centra el contenedor de servicios horizontalmente */
+    margin-bottom: 3rem; /* Espacio entre los servicios y el pie de página */
 }
-  
-.footer-link {
-    display: inline-block;
-    margin-left: 20px;
-    margin-right: 20px;
+
+/* Estilos del título de servicios */
+#services-container h2 {
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    color: var(--coal-black);
+    text-align: center; 
+}
+
+/* Estilos para los servicios */
+#services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Espacio entre los servicios */
+    max-width: 1200px; /* Ancho máximo para centrar los servicios y dejar espacio en blanco a los lados */
+    width: 100%;
+    justify-content: center; /* Centra los servicios horizontalmente */
+}
+
+/* Estilos para los elementos de servicio */
+.service-item {
+    width: calc(33.333% - 1rem); /* Ajusta el ancho de cada servicio */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding: 1rem;
+    background-color: #fff;
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 350px; /* Altura mínima para los items del servicio */
+}
+
+/* Asegura que las imágenes tengan el mismo tamaño */
+.service-item img {
+    width: 100%;
+    height: 200px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsionar */
+    border-bottom: 1px solid #ddd; /* Línea divisoria entre la imagen y el texto */
+}
+
+/* Ajusta el margen inferior del último elemento en la fila */
+#services .service-item:nth-child(3n) {
+    margin-right: 0; /* Elimina el margen derecho para el último elemento en cada fila de 3 */
+}
+
+/* Ajusta el margen inferior para todos los elementos */
+.service-item {
+    margin-bottom: 2rem; /* Espacio en la parte inferior de los cuadros de servicios */
     text-decoration: none;
-    color: white;
+    color: var(--coal-black);
 }
-  
-  
-.footer-link:hover{
-    text-decoration: underline;
+
+
+
+
+
+
+
+/* Estilos para el footer */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: gainsboro;
+    color: #666;
+    margin-top: 300px;
 }
-  
-.copyright{
-    color: white;
-    font-size: 13px;
-    margin: 0;
-    margin-top: 20px;
-}
-  
-  /* --- */

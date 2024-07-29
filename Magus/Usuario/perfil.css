@@ -1,0 +1,138 @@
+body {
+    font-family: "Lato", sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.header {
+    background-color: #ff3700;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+
+.logo{
+    display: flex;
+    font-size: 24px;
+    font-weight: bold;
+    color: #F2F4F7;
+    margin: 0;
+    text-decoration: none;
+    align-self: center;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #F2F4F7;
+    padding: 10px 20px;
+    display: block;
+}
+
+.profile-container {
+    display: flex;
+    margin-top: 20px;
+}
+
+.sidebar {
+    width: 700px;
+    background-color: #fff;
+    padding: 80px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-header {
+    text-align: center;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.profile-name {
+    margin: 10px 0;
+    font-size: 30px;
+}
+
+.profile-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-nav a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 20px 0;
+    border-bottom: 5px solid #ddd;
+}
+
+.profile-nav a:hover {
+    background-color: #f0f0f0;
+}
+
+.profile-content {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-details h2,
+.profile-history h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.profile-details ul,
+.activity ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-details li,
+.activity li {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.activity {
+    margin-top: 20px;
+}
+
+.activity strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: gainsboro;
+    color: #666;
+    margin-top: 250px;
+}

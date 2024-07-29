@@ -4,4 +4,4 @@
     session_unset();
     session_destroy();
 
-    header("Location: Index.php");
+    header("Location: index.php");

@@ -13,7 +13,7 @@ if (isset($_GET["Servicio"]) && $_GET["Servicio"] != '') {
 
     $Servicio = $_GET['Servicio'];
 
-    $stmt = $conn->prepare("SELECT * FROM Servicios WHERE Nombre LIKE ?");
+    $stmt = $conn->prepare("SELECT * FROM servicios WHERE Nombre LIKE ?");
     $searchTerm = "%" . $Servicio . "%";
     $stmt->bind_param("s", $searchTerm);
     $stmt->execute();

@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="registrar_php.css" />
+    <link rel="stylesheet" href="registrar.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -133,18 +133,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </section>
     </main>
-    <footer>
-        <div class="footer-conteiner">
-            <div>
-                <a href="#" class="footer-link">Terminos y condiciones</a>
-                <a href="#" class="footer-link">Acerca de</a>
-            </div>
-            <div>
-                <p class="copyright">
-                    Copyright © 2024 Todos los derechos reservados
-                </p>
-            </div>
-        </div>
+    <footer class="footer">
+        <p>© 2024 Magus. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
