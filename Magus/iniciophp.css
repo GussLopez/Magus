@@ -1,0 +1,267 @@
+:root {
+    --radiant-orange: #ff3700;
+    --fog-gray: #F2F4F7;
+    --coal-black: #141517;
+    --text-color: #2c3e50;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: var(--fog-gray);
+}
+
+.nav-conteiner {
+    background-color: var(--radiant-orange);
+    display: flex;
+    justify-content: space-between;
+    height: 6em;
+    align-items: center; 
+    padding: 0 1em; 
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 3em;
+    margin-right: 100px;
+    text-decoration: none;
+    transition: transform 0.3s ease; /* Add transition for smooth scaling */
+}
+
+.logo:hover {
+    transform: scale(1.25);
+}
+
+.busqueda {
+    display: flex;
+    align-items: center;
+}
+
+.buscador {
+    width: 450px;
+    height: 3em;
+    border-radius: 20px;
+    border: 1px solid #ffffff;
+    font-size: 15px;
+    padding-left: 2.5em; /* Add padding to the left to make space for the icon */
+    background: url('img/busqueda.png') no-repeat 0.5em center; 
+    background-size: 1.5em; /* Adjust the size of the icon */
+    background-color: white;
+}
+
+.buscador:hover {
+    cursor: pointer;
+}
+
+.buscador:placeholder-shown {
+    font-weight: bold;
+}
+
+.buscador:focus{
+    outline: none;
+    border: solid 2px gainsboro;
+}
+
+.nav-links {
+    display: flex;
+    margin-right: 3em;
+}
+
+.nav-links a{
+    margin-left: 1em; /* Add some space between the links */
+    color: white;
+    text-decoration: none;
+    align-self: center; /* Ensure links are centered vertically */
+    padding: 10px;
+    border-radius: 15px;
+}
+
+
+.nav-links a:hover{
+    transition: .5s ease-in-out;
+    background-color: #2c3e50;
+}
+
+/* Estilo de los resultados */
+#resultados {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    position:relative;
+}
+
+
+
+#resultados ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#resultados li {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+
+}
+
+#resultados li h3 {
+    margin: 0;
+    color: #007BFF;
+}
+
+#resultados li p {
+    margin: 5px;
+    color: #666;
+    border: 0;
+}
+
+#resultados li img {
+    max-width: 200px;
+    max-height: 200px;
+    margin-top: 10px;
+    margin-left: 20px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+
+
+/* MAIN */
+.boton-cerrar-sesion {
+    position: absolute;
+    top: 105px;
+    right: 1em;
+    background-color: var(--radiant-orange);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10; /* Ensure it is above other elements */
+    transition: all ease-in-out .2s;
+    text-decoration: none;
+    font-weight: bold;
+}
+.boton-cerrar-sesion:hover {
+    background-color: #6b1801;
+}
+
+.contenido-titulo{
+   background-image:   url(img/servidores.jpg);
+     text-align: center;
+    align-content: center;
+    height: 450px;
+    position: relative; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 2rem;
+}
+
+.contenido-titulo h1 {
+    margin: 0;
+    font-size: 3rem;
+    color: white;
+}
+
+/* Estilos del contenedor de servicios */
+#services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenedor de servicios horizontalmente */
+    margin-bottom: 3rem; /* Espacio entre los servicios y el pie de página */
+}
+
+/* Estilos del título de servicios */
+#services-container h2 {
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    color: var(--coal-black);
+    text-align: center; 
+}
+
+/* Estilos para los servicios */
+#services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Espacio entre los servicios */
+    max-width: 1200px; /* Ancho máximo para centrar los servicios y dejar espacio en blanco a los lados */
+    width: 100%;
+    justify-content: center; /* Centra los servicios horizontalmente */
+}
+
+/* Estilos para los elementos de servicio */
+.service-item {
+    width: calc(33.333% - 1rem); /* Ajusta el ancho de cada servicio */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding: 1rem;
+    background-color: #fff;
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 350px; /* Altura mínima para los items del servicio */
+}
+
+/* Asegura que las imágenes tengan el mismo tamaño */
+.service-item img {
+    width: 100%;
+    height: 200px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsionar */
+    border-bottom: 1px solid #ddd; /* Línea divisoria entre la imagen y el texto */
+}
+
+/* Ajusta el margen inferior del último elemento en la fila */
+#services .service-item:nth-child(3n) {
+    margin-right: 0; /* Elimina el margen derecho para el último elemento en cada fila de 3 */
+}
+
+/* Ajusta el margen inferior para todos los elementos */
+.service-item {
+    margin-bottom: 2rem; /* Espacio en la parte inferior de los cuadros de servicios */
+    text-decoration: none;
+    color: var(--coal-black);
+}
+
+
+.service-info h3{
+    font-size: 28px;
+}
+
+.servicio-descripcion{
+    font-size: 17px;
+    color: rgb(102, 102, 102);
+}
+
+.servicio-precio{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.servicio-ubicacion{
+    font-size: 16px;
+}
+
+
+
+
+/* Estilos para el footer */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: gainsboro;
+    color: #666;
+    margin-top: 300px;
+}

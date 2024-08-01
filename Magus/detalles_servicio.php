@@ -25,7 +25,7 @@ if (isset($_GET["id_servicio"]) && $_GET["id_servicio"] != '') {
         echo "<p>Precio: $" . htmlspecialchars($row["Costo"]) . "</p>";
         echo "<p>Ubicación: " . htmlspecialchars($row["Ubicacion_Servicio"]) . "</p>";
         echo "<img src='" . htmlspecialchars($row["imagen_url"]) . "' alt='Imagen del servicio'>";
-        echo "<p>Descripción: " . htmlspecialchars($row["descripcion"]) . "</p>"; // Asegúrate de tener esta columna en tu base de datos
+        echo "<p>Descripción: " . htmlspecialchars($row["descripcion"]) . "</p>";
         echo "</div>";
     } else {
         echo "<p>Servicio no encontrado.</p>";

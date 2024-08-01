@@ -23,7 +23,7 @@ if (isset($_GET["Servicio"]) && $_GET["Servicio"] != '') {
         echo "<ul>";
         while ($row = $result->fetch_assoc()) {
             if (isset($row["id_servicio"])) {
-                $url = "mostrar_servicio/mostrar_servicio.php?id_servicio=" . $row["id_servicio"];
+                $url = "detalle_servicio.php?id_servicio=" . $row["id_servicio"];
                 echo "<li>";
                 echo "<a href='" . $url . "'>";
                 echo "<div>";

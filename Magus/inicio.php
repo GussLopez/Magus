@@ -4,6 +4,15 @@ if (!isset($_SESSION['Correo'])) {
     header("Location: index.php");
     exit();
 }
+
+if (!isset($_SESSION['id_usuario'])) {
+    header("Location: index.php");
+    exit();
+}
+include('conexion.php'); 
+
+
+
 ?>
 
 
@@ -13,7 +22,7 @@ if (!isset($_SESSION['Correo'])) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Magus</title>
-    <link rel="stylesheet" href="inicio.css" />
+    <link rel="stylesheet" href="iniciophp.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,7 +33,19 @@ if (!isset($_SESSION['Correo'])) {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
-    
+        <!-- Chat en vivo -->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/66a8da111601a2195b9e3189/1i41p7m1m';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
     <header>
       <div class="nav-conteiner">
         <a href="inicio.php" class="logo">Magus</a>
@@ -35,12 +56,12 @@ if (!isset($_SESSION['Correo'])) {
 
         <!--  -->
         <div class="nav-links">
-          <a href="Servicios/servicios.php">Mis Servicios</a>
-          <a href="Usuario/perfil.html">Perfil</a>
-          <a href="sobre_nosotros/index.html">Sobre Nosotros</a>
+            <a href="Servicios/servicios.php">Mis Servicios</a>
+            <a href="Usuario/perfil.html">Perfil</a>
+            <a href="sobre_nosotros/index.html">Sobre Nosotros</a>
         </div>
       </div>
-      <div id="resultados"></div>
+        <div id="resultados"></div>
 
       <main>
         <a href="CerrarSesion.php" class="boton-cerrar-sesion">Cerrar sesión</a>
@@ -49,8 +70,9 @@ if (!isset($_SESSION['Correo'])) {
         </div>
       </main>
     </header>
+    
 
-    <!-- Script buscador -->
+    <!-- Script del buscador -->
     <script>
         $(document).ready(function() {
             $("#search").on("keyup", function() {
@@ -83,6 +105,7 @@ if (!isset($_SESSION['Correo'])) {
     </footer> 
 
   </body>
+  <!-- Script de los servicios -->
   <script>
         document.addEventListener("DOMContentLoaded", function() {
             fetch('get_services.php')
@@ -91,15 +114,15 @@ if (!isset($_SESSION['Correo'])) {
                     const servicesContainer = document.getElementById('services');
                     services.forEach(service => {
                         const serviceItem = document.createElement('a');
-                        serviceItem.href = `#`;
+                        serviceItem.href = `mostrar_servicio/mostrar_servicio.php?id_servicio=${service.id_servicio}`;
                         serviceItem.className = 'service-item';
                         serviceItem.innerHTML = `
                             <img src="${service.imagen_url}" alt="${service.nombre}">
                             <div class="service-info">
                                 <h3>${service.nombre}</h3>
-                                <p>${service.descripcion}</p>
-                                <p><strong>Costo:</strong> ${service.costo}</p>
-                                <p><strong>Ubicación:</strong> ${service.ubicacion_servicio}</p>
+                                <p class="servicio-descripcion">${service.descripcion}</p>
+                                <p class="servicio-precio"><strong>$</strong> ${service.costo}</p>
+                                <p class="servicio-ubicacion"><strong>Ubicación:</strong> ${service.ubicacion_servicio}</p>
                             </div>
                         `;
                         servicesContainer.appendChild(serviceItem);

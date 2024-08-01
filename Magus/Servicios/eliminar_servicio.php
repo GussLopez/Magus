@@ -1,38 +1,18 @@
 <?php
-session_start();
-
-// Verificar que el usuario esté autenticado
-if (!isset($_SESSION['Correo']) || !isset($_SESSION['id_usuario'])) {
-    header("Location: ../index.php");
-    exit();
-}
-
-// Verificar que se haya pasado el ID del servicio a eliminar
-if (!isset($_GET['id'])) {
-    die("ID de servicio no especificado.");
-}
-
-$id_servicio = $_GET['id'];
-$id_usuario = $_SESSION['id_usuario'];
-
-// Conectar a la base de datos
 include('../conexion.php');
 
-// Preparar y ejecutar la consulta para eliminar el servicio
-$sql = "DELETE FROM servicios WHERE id_servicio = ? AND id_usuario = ?";
-$stmt = $conexion->prepare($sql);
-$stmt->bind_param("ii", $id_servicio, $id_usuario);
+if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+    $id_servicio = $_GET['id'];
+    echo "ID recibido: " . $id_servicio; 
+    
+    $query = "DELETE FROM servicios WHERE id_servicio = $id_servicio";
 
-if ($stmt->execute()) {
-    echo "Servicio eliminado exitosamente.";
+    if (mysqli_query($conexion, $query)) {
+        header('Location: servicios.php'); 
+        exit();
+    } else {
+        echo "Error al eliminar el servicio: " . mysqli_error($conexion);
+    }
 } else {
-    echo "Error al eliminar el servicio: " . $conexion->error;
+    echo "ID inválido.";
 }
-
-$stmt->close();
-$conexion->close();
-
-// Redireccionar a la página de servicios
-header("Location: servicios.php");
-exit();
-?>

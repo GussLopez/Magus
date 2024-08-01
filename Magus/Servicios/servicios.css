@@ -41,7 +41,7 @@ body {
 .buscador {
     width: 30em;
     height: 3em;
-    border-radius: 20px;
+    border-radius: 40px;
     border: 1px solid #ffffff;
     font-size: 15px;
     padding-left: 2.5em; /* Add padding to the left to make space for the icon */
@@ -89,6 +89,51 @@ body {
     margin-right: auto;
     border-bottom: solid 1px rgb(147, 147, 147);
 }
+
+/* Estilo de los resultados */
+#resultados {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    position:relative;
+}
+
+
+
+#resultados ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#resultados li {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+
+}
+
+#resultados li h3 {
+    margin: 0;
+    color: #007BFF;
+}
+
+#resultados li p {
+    margin: 5px 0 0 0;
+    color: #666;
+}
+
+#resultados li img {
+    max-width: 200px;
+    max-height: 200px;
+    margin-left: 20px;
+    border-radius: 4px;
+    object-fit: cover;
+}
 /* División nav y tabla */
 
 .breadcrumbs a{
@@ -127,7 +172,10 @@ body {
 }
 
 /* Tablas Servicios */
-
+.servicio-conteiner{
+    margin-top: 30px; 
+    border: solid 1px;
+}
 .tabla-servicio{
     background-color: white;
     border: solid 1px rgb(153, 153, 153);
@@ -135,7 +183,8 @@ body {
     width: 920px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
+
 }
 
 .servicio-realizado{
@@ -176,8 +225,7 @@ h2 {
 }
 
 .servicio-img img{
-    width: 100px;
-    height: 100px;
+    width: 200px;
     margin-left: 30px;
 }
 
@@ -255,4 +303,22 @@ h2 {
     background-color: #e13202;
     animation: shake .5s;
     animation-iteration-count: 1;
+}
+
+p.mensaje-sin-servicios{
+    display: flex;
+    padding: 10px 10px 10px 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(69, 69, 69);
+    justify-content: center;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 500px;
+    padding: 20px;
+    background-color: gainsboro;
+    color: #666;
+
 }

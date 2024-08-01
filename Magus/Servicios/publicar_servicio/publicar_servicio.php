@@ -15,21 +15,18 @@ $errorMessages = [];
 $successMessage = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtener los datos del formulario
     $categoria = $_POST["categoria"];
     $nombre = trim($_POST["nombre"]);
     $direccion = trim($_POST["direccion"]);
     $costo = trim($_POST["costo"]);
     $imagen_url = trim($_POST["imagen_url"]);
     $descripcion = trim($_POST["descripcion"]);
-    $id_usuario = $_SESSION['id_usuario']; // Obtener el id_usuario de la sesión
+    $id_usuario = $_SESSION['id_usuario'];
 
-    // Verificar que id_usuario no sea null
     if (empty($id_usuario)) {
         $errorMessages['general'] = "ID de usuario no válido.";
     }
 
-    // Validar que todos los campos estén llenos
     if (empty($categoria)) {
         $errorMessages['categoria'] = "Selecciona una categoría.";
     }
@@ -51,9 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errorMessages['descripcion'] = "La descripción es obligatoria.";
     }
 
-    // Si no hay errores, proceder con la inserción en la base de datos
     if (empty($errorMessages)) {
-        // Conectar a la base de datos
         $servername = "localhost";
         $username = "root";
         $password = "";
@@ -61,12 +56,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $conn = new mysqli($servername, $username, $password, $dbname);
 
-        // Verificar la conexión
         if ($conn->connect_error) {
             die("Conexión fallida: " . $conn->connect_error);
         }
 
-        // Insertar el servicio incluyendo el id_usuario
         $sql = "INSERT INTO servicios (id_usuario, Categoria_Servicio, Nombre, Ubicacion_Servicio, Costo, imagen_url, Descripcion) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("issssss", $id_usuario, $categoria, $nombre, $direccion, $costo, $imagen_url, $descripcion);
@@ -89,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Magus</title>
-    <link rel="stylesheet" href="publicar.css" />
+    <link rel="stylesheet" href="publicar_servicio.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -131,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="servicios-conteiner">
       <p class="breadcrumbs">
-        <a href="/">Mi cuenta</a> >
+        <a href="../../inicio.php">Inicio</a> >
         <a href="../servicios.php">Tus servicios</a> > <a href="">Publicar servicio</a>
       </p>
       <div class="row-h1">

@@ -27,7 +27,7 @@ $result = mysqli_query($conexion, $query);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Magus</title>
-    <link rel="stylesheet" href="servicios.css" />
+    <link rel="stylesheet" href="mostrarservicio.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -47,7 +47,7 @@ $result = mysqli_query($conexion, $query);
         </div>
         <!--  -->
         <div class="nav-links">
-          <a href="servicios.php">Mis Servicios</a>
+          <a href="../servicios/servicios.php">Mis Servicios</a>
           <a href="../Usuario/perfil.html">Perfil</a>
           <a href="../sobre_nosotros/index.html">Sobre nosotros</a>
         </div>
@@ -55,68 +55,62 @@ $result = mysqli_query($conexion, $query);
       <div id="resultados"></div>
     </header>
     <main>
-      <div class="servicios-conteiner">
-        <p class="breadcrumbs">
-          <a href="../inicio.php">Inicio</a> > <a href="#">Tus servicios</a>
-        </p>
-        <div class="row-h1">
-          <h1>Tus servicios</h1>
-        </div>
-      </div>
-      <div class="servicios-section-line">
-        <ul>
-          <li>
-            <a href="publicar_servicio/publicar_servicio.php">+ Nuevo servicio</a>
-          </li>
-        </ul>
-      </div>
 
         <?php
-        if (mysqli_num_rows($result) > 0) {
-          while ($row = mysqli_fetch_assoc($result)) {
-              echo '
-              <div class="tabla-servicio">
-                <div class="servicio-realizado">
-                    <h2 class="nombre-servicio">' . $row['Nombre'] . '</h2>
-                    <p class="precio-servicio">$' . $row['Costo'] . '</p>
-                </div>
-                <div class="info-conteiner">
-                    <div class="info-servicio">
-                        <p class="ubicacion-servicio">' . $row['Ubicacion_Servicio'] . '</p>
-                        <div class="servicio-img">
-                            <img src="' . $row['imagen_url'] . '" alt="" class="servicio-img" />
-                            <p class="descripcion-servicio">' . $row['Descripcion'] . '</p>
+
+if (isset($_GET["id_servicio"]) && $_GET["id_servicio"] != '') {
+    $id_servicio = $_GET["id_servicio"];
+    
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "magus";
+    $conn = new mysqli($servername, $username, $password, $database);
+
+    if ($conn->connect_error) {
+        die("Error en la conexión: " . $conn->connect_error);
+    }
+
+    $stmt = $conn->prepare("SELECT * FROM Servicios WHERE id_servicio = ?");
+    $stmt->bind_param("i", $id_servicio);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        echo'   <div class="servicio-conteiner">
+                    <div class="img-conteiner">
+                        <img src= '. htmlspecialchars($row["imagen_url"]) . ' alt ="imagen del servicio">
+                        <h2> Descripción </h2>
+                        <p class="descripcion">'. htmlspecialchars($row["Descripcion"]) . '</p>
+                    </div>
+                    <div class="info-conteiner">
+                        <h1>' . htmlspecialchars($row["Nombre"]) . '</h1>
+                        <p class="precio">$' . htmlspecialchars($row["Costo"]) . '</p>
+                        <div class="ubicacion-conteiner">
+                            <p class="ubicacion">Ubicación: ' . htmlspecialchars($row["Ubicacion_Servicio"]) . '</p>
+                        </div>
+                        <div class="boton-conteiner">
+                            <a href="../metodo_pago/seleccionar_pago.php"> Comprar </a>
                         </div>
                     </div>
-                </div>
-                <div class="opciones-servicio">
-                    <a href="editar_servicio/editar_servicio.php?id=' . $row['id_servicio'] . '" class="boton-editar">
-                        <img src="../img/lapiz-de-usuario.png" alt="" class="img-boton" />Editar servicio
-                    </a>
-                    <a href="#" class="boton-borrar" onclick="confirmarEliminacion(' . $row['id_servicio'] . ')">
-                        <img src="../img/basura.png" alt="" class="img-boton" />Eliminar servicio
-                    </a>
-                </div>
-                <br>
-              </div>';
-          }
-      } else {
-          echo '<p class="mensaje-sin-servicios">No tienes servicios registrados.</p>';
-      }
-        ?>
-        <!-- Confirmación para eliminar un servicio -->
-      <script>
-function confirmarEliminacion(id_servicio) {
-    if (confirm("¿Estás seguro de que deseas eliminar este servicio?")) {
-        window.location.href = "eliminar_servicio.php?id=" + id_servicio;
+                </div> ';
+    } else {
+        echo "<p>Servicio no encontrado.</p>";
     }
+
+    $stmt->close();
+    $conn->close();
+} else {
+    echo "<p>Parámetro de ID no válido.</p>";
 }
-</script>
+
+    ?>
+
     </main>
     <footer class="footer">
         <p>© 2024 Magus. Todos los derechos reservados.</p>
     </footer>
-    bdo
 </body>
 <!-- Script del buscador -->
 <script>

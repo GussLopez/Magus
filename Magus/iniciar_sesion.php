@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include('conexion.php');
 
@@ -20,9 +20,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         header("Location: index.php?error=La contraseña es requerida");
         exit();
     } else {
-        // Utilizar una consulta preparada para prevenir SQL Injection
-        $Sql = "SELECT * FROM usuarios WHERE Correo = ? AND Contraseña = ?";
-        $stmt = mysqli_prepare($conexion, $Sql);
+        $sql = "SELECT * FROM usuarios WHERE Correo = ? AND Contraseña = ?";
+        $stmt = mysqli_prepare($conexion, $sql);
         mysqli_stmt_bind_param($stmt, "ss", $email, $password);
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
@@ -36,7 +35,9 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 $_SESSION['Apellido'] = $row['Apellido'];
                 $_SESSION['Correo'] = $row['Correo'];
                 $_SESSION['Telefono'] = $row['Telefono'];
-                header("Location: /Magus/inicio.php");
+                
+                // Redirigir al usuario a una página con su id_usuario en la URL
+                header("Location: /Magus/inicio.php?id_usuario=" . $row['id_usuario']);
                 exit();
             } else {
                 header("Location: index.php?error=El correo o la contraseña son incorrectos");

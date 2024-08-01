@@ -7,37 +7,33 @@ if (!isset($_SESSION['Correo'])) {
 
 include('../../conexion.php'); 
 
-// Verificar que el id del servicio esté en la URL
-if (!isset($_GET['id_servicio'])) {
+if (!isset($_SESSION['id_usuario'])) {
+  header("Location: index.php");
+  exit();
+}
+
+$id_usuario = $_SESSION['id_usuario'];
+if (!isset($_GET['id'])) {
     die("ID de servicio no especificado.");
 }
 
-$id_servicio = $_GET['id_servicio'];
+$id_servicio = $_GET['id'];
 
-// Conectar a la base de datos
-$conn = new mysqli($servername, $username, $password, $dbname);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nombre = $_POST['Nombre'];
+    $ubicacion = $_POST['Ubicacion_Servicio'];
+    $costo = $_POST['Costo'];
+    $descripcion = $_POST['Descripcion'];
+    $categoria = $_POST['Categoria_Servicio'];
 
-// Verificar la conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
-
-// Procesar el formulario si se ha enviado
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nombre = $_POST['nombre'];
-    $direccion = $_POST['direccion'];
-    $costo = $_POST['costo'];
-    $descripcion = $_POST['descripcion'];
-    $categoria = $_POST['categoria'];
-
-    $sql_update = "UPDATE servicios SET Nombre=?, Ubicacion_Servicio=?, Costo=?, Descripcion=?, Categoria_Servicio=? WHERE id_servicio=?";
-    $stmt_update = $conn->prepare($sql_update);
-    $stmt_update->bind_param("ssissi", $nombre, $direccion, $costo, $descripcion, $categoria, $id_servicio);
+    $sql_update = "UPDATE servicios SET Nombre=?, Ubicacion_Servicio=?, Costo=?, Descripcion=?, Categoria_Servicio=? WHERE $id_servicio=?";
+    $stmt_update = $conexion->prepare($sql_update);
+    $stmt_update->bind_param("ssissi", $nombre, $ubicacion, $costo, $descripcion, $categoria, $id_servicio);
 
     if ($stmt_update->execute()) {
-        echo "Servicio actualizado con éxito.";
+        echo "Servicio actualizado con éxito."; 
     } else {
-        echo "Error al actualizar el servicio: " . $conn->error;
+        echo "Error al actualizar el servicio: " . $conexion->error;
     }
 
     $stmt_update->close();
@@ -45,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 // Consultar los datos del servicio
 $sql = "SELECT * FROM servicios WHERE id_servicio = ?";
-$stmt = $conn->prepare($sql);
+$stmt = $conexion->prepare($sql);
 $stmt->bind_param("i", $id_servicio);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -56,7 +52,7 @@ if (!$servicio) {
 }
 
 $stmt->close();
-$conn->close();
+$conexion->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -84,7 +80,7 @@ $conn->close();
       </div>
     </head>
     <!-- Formulario para editar el servicio -->
-    <form action="editar_servicio.php?id_servicio=<?= htmlspecialchars($id_servicio) ?>" method="post">
+    <form action="editar_servicio.php?$id_servicio=<?= htmlspecialchars($id_servicio) ?>" method="post">
       <div class="tabla-servicio">
         <div class="informacion-servicio">
           <!-- Campo oculto para enviar el ID del servicio -->
