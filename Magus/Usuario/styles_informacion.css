@@ -1,78 +1,70 @@
+/* Estilos generales */
 body {
-    font-family: "Lato", sans-serif;
-    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-
-header {
-    background-color: #ff3700;
-    padding: 5px 0;
-    color: rgb(183, 31, 31);
-    width: 100%;
-}
-
-.nav-bar {
-    list-style: none;
-    padding: 10;
-    margin: 0;
-    display: inline;
-    justify-content: center;
-}
-
-.nav-bar li {
-    margin:  23.2px;
-}
-
-.nav-bar a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.nav-bar a:hover {
-    text-decoration: underline;
-}
-
-.container {
-    width: 50%;
-    margin: 50px auto;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
+    background-color: #f4f4f4;
     color: #333;
 }
 
-.user-section {
-    margin-bottom: 30px;
+/* Estilo del encabezado y la barra de navegación */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
 }
 
-.user-section p, .user-section ul {
-    color: #666;
-    font-size: 16px;
+nav ul.nav-bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
-.user-section ul {
-    padding-left: 20px;
+nav ul.nav-bar li {
+    display: inline;
+    margin: 0 15px;
 }
 
-.user-section a {
-    color: #007bff;
+nav ul.nav-bar li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.user-section a:hover {
+nav ul.nav-bar li a:hover {
     text-decoration: underline;
 }
 
-.footer {
-    text-align: center;
-    margin-top: 40px;
+/* Estilo del contenedor principal */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: white;
     padding: 20px;
-    background-color: gainsboro;
-    color: #666;
-    margin-top: 150px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+/* Estilo de la sección de usuario */
+.user-section {
+    margin: 20px 0;
+}
+
+.user-section h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.user-section p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.user-section strong {
+    color: #333;
+}
+
+
 

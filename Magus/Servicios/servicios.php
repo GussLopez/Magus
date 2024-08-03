@@ -14,6 +14,7 @@ if (!isset($_SESSION['id_usuario'])) {
 $id_usuario = $_SESSION['id_usuario'];
 
 include('../conexion.php'); 
+
 $query = "SELECT * FROM servicios WHERE id_usuario = '$id_usuario'";
 $result = mysqli_query($conexion, $query);
 
@@ -48,7 +49,7 @@ $result = mysqli_query($conexion, $query);
         <!--  -->
         <div class="nav-links">
           <a href="servicios.php">Mis Servicios</a>
-          <a href="../Usuario/perfil.html">Perfil</a>
+          <a href="../Usuario/perfil.php">Perfil</a>
           <a href="../sobre_nosotros/index.html">Sobre nosotros</a>
         </div>
       </div>

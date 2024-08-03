@@ -33,19 +33,7 @@ include('conexion.php');
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
-        <!-- Chat en vivo -->
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/66a8da111601a2195b9e3189/1i41p7m1m';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    <!--End of Tawk.to Script-->
+    
     <header>
       <div class="nav-conteiner">
         <a href="inicio.php" class="logo">Magus</a>
@@ -57,19 +45,19 @@ include('conexion.php');
         <!--  -->
         <div class="nav-links">
             <a href="Servicios/servicios.php">Mis Servicios</a>
-            <a href="Usuario/perfil.html">Perfil</a>
+            <a href="Usuario/perfil.php">Perfil</a>
             <a href="sobre_nosotros/index.html">Sobre Nosotros</a>
         </div>
       </div>
         <div id="resultados"></div>
-
+    </header>
       <main>
         <a href="CerrarSesion.php" class="boton-cerrar-sesion">Cerrar sesión</a>
         <div class="contenido-titulo">
             <h1>Encuentra y Ofrece Servicios de Confianza <br> para tu Hogar y Más</h1>
         </div>
       </main>
-    </header>
+    
     
 
     <!-- Script del buscador -->

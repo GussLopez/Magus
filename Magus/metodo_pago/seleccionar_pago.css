@@ -1,0 +1,159 @@
+:root {
+    --radiant-orange: #ff3700;
+    --fog-gray: #F2F4F7;
+    --coal-black: #141517;
+    --text-color: #2c3e50;
+}
+  
+body{
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+.nav-conteiner {
+    background-color: var(--radiant-orange);
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center; 
+    padding: 0 1em; 
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 3em;
+    margin-right: 100px;
+    text-decoration: none;
+    transition: transform 0.3s ease; 
+    display: flex;
+    align-items: center;
+}
+
+.logo:hover {
+    transform: scale(1.25);
+}
+
+
+
+
+
+.nav-links {
+    display: flex;
+    margin-right: 3em;
+}
+
+.nav-links a{
+    margin-left: 1em; /* Add some space between the links */
+    color: white;
+    text-decoration: none;
+    align-self: center; /* Ensure links are centered vertically */
+    padding: 10px;
+    border-radius: 15px;
+}
+
+
+.nav-links a:hover{
+    transition: .5s ease-in-out;
+    background-color: #2c3e50;
+}
+  
+
+
+h1{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  
+}
+
+.conteiner{
+    display: flex;
+    flex-flow: column;
+    height: 570px;
+    align-items: center;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    border: solid 2px gainsboro;
+    border-radius: 10px;
+}
+.info-conteiner{
+    display: flex;
+    flex-flow: column;
+    height: 500px;
+    align-self: center;
+}
+
+
+label{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #444444;
+}
+form select{
+    width: 300px;
+    display: flex;
+    height: 40px;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: solid 1px rgb(183, 183, 183);
+}
+
+input{
+    margin-top: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    width: 300px;
+    display: flex;
+    height: 40px;
+    border-radius: 5px;
+    border: solid 1px rgb(183, 183, 183);
+    padding-left: 10px;
+}
+
+button{
+    display: block;
+    background-color: var(--radiant-orange);
+    width: 200px;
+    border: 0;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    margin-top: 30px;
+    align-self: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all ease-in-out .3s;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover{
+    background-color: #d43002;
+}
+
+#cvv{
+    width: 100px;
+}
+  
+  /* Estilos para el footer */
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: gainsboro;
+    color: #666;
+    margin-top: 300px;
+  }
+  
+.error{
+    background-color: red;
+    color: white;
+    padding: 10px;
+    width: 95%;
+    border-radius: 50px;
+    margin: 20px auto;
+}

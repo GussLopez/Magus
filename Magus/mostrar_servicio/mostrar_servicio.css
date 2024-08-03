@@ -1,0 +1,233 @@
+:root {
+    --radiant-orange: #ff3700;
+    --fog-gray: #F2F4F7;
+    --coal-black: #141517;
+    --text-color: #2c3e50;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.nav-conteiner {
+    background-color: var(--radiant-orange);
+    display: flex;
+    justify-content: space-between;
+    height: 6em;
+    align-items: center; 
+    padding: 0 1em; 
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 3em;
+    text-decoration: none;
+    transition: transform 0.3s ease; /* Add transition for smooth scaling */
+}
+
+.logo:hover {
+    transform: scale(1.25);
+}
+
+.busqueda {
+    display: flex;
+    align-items: center;
+}
+
+.buscador {
+    width: 30em;
+    height: 3em;
+    border-radius: 40px;
+    border: 1px solid #ffffff;
+    font-size: 15px;
+    padding-left: 2.5em; 
+    background: url('../img/busqueda.png') no-repeat 0.5em center; 
+    background-size: 1.5em; 
+    background-color: white;
+}
+
+.buscador:hover {
+    cursor: pointer;
+}
+
+.buscador:placeholder-shown {
+    font-weight: bold;
+}
+
+.buscador:focus{
+    outline: none;
+    border: solid 2px gainsboro;
+}
+
+.nav-links {
+    display: flex;
+    margin-right: 3em;
+}
+
+.nav-links a{
+    margin-left: 1em; /* Add some space between the links */
+    color: white;
+    text-decoration: none;
+    align-self: center; /* Ensure links are centered vertically */
+    padding: 10px;
+    border-radius: 15px;
+}
+
+
+.nav-links a:hover{
+    transition: .5s ease-in-out;
+    background-color: #2c3e50;
+}
+
+.servicio-conteiner{
+    width: 1200px;
+    height: 800px;
+    display: flex;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+}
+
+
+.img-conteiner img{
+    width: 700px;
+    margin-left: 30px;
+    border-radius: 5px;
+}
+
+/* Descripcion */
+.img-conteiner h2{
+    margin-left: 30px;
+    font-weight: normal;
+}
+.descripcion{
+    margin-top: 20px;
+    margin-left: 30px;
+    color: gray;
+    font-size: 18px;
+    margin: 20px 0 30px 30px;
+}
+/*  */
+
+.info-conteiner{
+    width: 450px;
+    height: 600px;
+    justify-content: flex-end;
+    margin-left: 50px;
+    border-radius: 10px;
+    border: solid 1px rgb(174, 174, 174);
+}
+
+h1{
+    margin-left: 30px;
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+.precio{
+    margin-left: 30px;
+    font-size: 36px;
+}
+
+.ubicacion-conteiner{
+    height: 200px;
+    font-size: 18px;
+}
+
+.ubicacion{
+
+    margin-left: 30px;
+}
+
+
+
+.boton-conteiner{
+    display: flex;
+    flex-flow: row;
+}
+
+.info-conteiner a{
+    display: flex;
+    width: 250px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: var(--radiant-orange);
+    color: white;
+    border: 0;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all ease-in-out .3s;
+    text-decoration: none;
+}
+
+.info-conteiner a:hover{
+    background-color: #d73002;
+}
+
+
+
+/* Estilo de los resultados */
+#resultados {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    position:relative;
+}
+
+
+
+#resultados ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#resultados li {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+
+}
+
+#resultados li h3 {
+    margin: 0;
+    color: #007BFF;
+}
+
+#resultados li p {
+    margin: 5px 0 0 0;
+    color: #666;
+}
+
+#resultados li img {
+    max-width: 200px;
+    max-height: 200px;
+    margin-left: 20px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 500px;
+    padding: 20px;
+    background-color: gainsboro;
+    color: #666;
+
+}

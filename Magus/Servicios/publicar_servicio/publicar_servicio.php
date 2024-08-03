@@ -176,11 +176,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php if(isset($errorMessages['nombre'])): ?>
                     <span class="error-nombre"><?= $errorMessages['nombre'] ?></span>
                 <?php endif; ?>
-                <input type="text" name="direccion" placeholder="Dirección del servicio" value="<?= isset($_POST['direccion']) ? htmlspecialchars($_POST['direccion']) : '' ?>" />
+                <input type="text" name="direccion" placeholder="Ubicación del servicio" value="<?= isset($_POST['direccion']) ? htmlspecialchars($_POST['direccion']) : '' ?>" />
                 <?php if(isset($errorMessages['direccion'])): ?>
                     <span class="error-direccion"><?= $errorMessages['direccion'] ?></span>
                 <?php endif; ?>
-                <input type="number" name="costo" placeholder="Costo" class="input-costo" value="<?= isset($_POST['costo']) ? htmlspecialchars($_POST['costo']) : '' ?>" />
+                <input type="number" name="costo" placeholder="Precio" class="input-costo" value="<?= isset($_POST['costo']) ? htmlspecialchars($_POST['costo']) : '' ?>" />
                 <?php if(isset($errorMessages['costo'])): ?>
                     <span class="error-costo"><?= $errorMessages['costo'] ?></span>
                 <?php endif; ?>

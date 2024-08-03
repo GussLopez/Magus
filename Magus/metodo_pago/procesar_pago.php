@@ -6,6 +6,12 @@
     <link rel="stylesheet" href="estilos.css">
     <title>Procesar Pago</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="procesar_pago.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../img/logo_favi.ico" type="image/x-icon" />
     <script>
         $(document).ready(function() {
             $("input[name='metodo_pago']").on("change", function() {
@@ -58,14 +64,36 @@
     </script>
 </head>
 <body>
-    <div class="container">
+    <header>
+        <div class="nav-conteiner">
+            <a href="inicio.php" class="logo">Magus</a>
+            <div class="nav-links">
+                <a href="Servicios/servicios.php">Mis Servicios</a>
+                <a href="Usuario/perfil.html">Perfil</a>
+                <a href="sobre_nosotros/index.html">Sobre Nosotros</a>
+            </div>
+        </div>
+    </header>
+    <main>
+    <div class="conteiner">
+
         <h1>Seleccionar Método de Pago</h1>
+        <div>
+
         <input type="hidden" id="id_servicio" value="<?php echo isset($_GET['id_servicio']) ? htmlspecialchars($_GET['id_servicio']) : ''; ?>">
         <label><input type="radio" name="metodo_pago" value="tarjeta"> Tarjeta de Crédito/Débito</label>
         <label><input type="radio" name="metodo_pago" value="paypal"> PayPal</label>
         <label><input type="radio" name="metodo_pago" value="transferencia"> Transferencia Bancaria</label>
-        
+
         <div id="formulario_pago"></div>
+        </div>
+
     </div>
+
+  </main>
+  <footer class="footer">
+        <p>© 2024 Magus. Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>
