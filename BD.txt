@@ -1,0 +1,211 @@
+CREATE DATABASE IF NOT EXISTS `magus` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `magus`;
+-- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: magus
+-- ------------------------------------------------------
+-- Server version	8.4.0
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `administradores`
+--
+
+DROP TABLE IF EXISTS `administradores`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `administradores` (
+  `id_administrador` int NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(50) DEFAULT NULL,
+  `Apellido` varchar(50) DEFAULT NULL,
+  `RFC` varchar(50) DEFAULT NULL,
+  `Telefono` varchar(12) DEFAULT NULL,
+  PRIMARY KEY (`id_administrador`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `administradores`
+--
+
+LOCK TABLES `administradores` WRITE;
+/*!40000 ALTER TABLE `administradores` DISABLE KEYS */;
+/*!40000 ALTER TABLE `administradores` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `atencion_cliente`
+--
+
+DROP TABLE IF EXISTS `atencion_cliente`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `atencion_cliente` (
+  `id_mensaje` int NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(30) DEFAULT NULL,
+  `Correo` varchar(50) DEFAULT NULL,
+  `Mensaje` varchar(300) DEFAULT NULL,
+  `Fecha` date DEFAULT NULL,
+  `id_usuario` int DEFAULT NULL,
+  PRIMARY KEY (`id_mensaje`),
+  KEY `fk_usuario_mensaje` (`id_usuario`),
+  CONSTRAINT `fk_usuario_mensaje` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `atencion_cliente`
+--
+
+LOCK TABLES `atencion_cliente` WRITE;
+/*!40000 ALTER TABLE `atencion_cliente` DISABLE KEYS */;
+/*!40000 ALTER TABLE `atencion_cliente` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `categorias`
+--
+
+DROP TABLE IF EXISTS `categorias`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `categorias` (
+  `id_categoria` int NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(50) DEFAULT NULL,
+  `imagen` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`id_categoria`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `categorias`
+--
+
+LOCK TABLES `categorias` WRITE;
+/*!40000 ALTER TABLE `categorias` DISABLE KEYS */;
+INSERT INTO `categorias` VALUES (1,'Reparaciones e Instalaciones','https://image.freepik.com/vector-gratis/reparacion-electrodomesticos-concepto-abstracto-ilustracion_335657-2213.jpg'),(2,'Cuidado Personal','https://img.freepik.com/free-vector/hygiene-4-flat-icons-square-composition_1284-5798.jpg?t=st=1721769269~exp=1721772869~hmac=1e585902b9d0951c73cb788017fb30446cca864962b60a7337c53455ff5d6a4d&w=740'),(3,'Eventos y Entretenimiento','https://img.freepik.com/free-vector/conference-concept-illustration_114360-2344.jpg?t=st=1721769815~exp=1721773415~hmac=24bd70f2d39cf2950e653976eac88f259808a54688e67fea6ee89ba599d48f63&w=740'),(4,'Educación y Cursos','https://img.freepik.com/free-vector/flat-university-concept-background_23-2148189185.jpg?t=st=1721769903~exp=1721773503~hmac=eeaf2d2feaa0bcd1a3eb02f659f8270fbfb6ac38d3aeb274e92952f471c053ab&w=740'),(5,'Salud y Bienestar','https://img.freepik.com/free-vector/self-care-concept-with-man-activities_23-2148530061.jpg?t=st=1721769959~exp=1721773559~hmac=82862d9b10be5c984e2c53ae0195533bc16226b3db7cd59655753506ddb47d58&w=740'),(6,'Hogar y Jardineria','https://img.freepik.com/free-vector/yellow-house_1110-691.jpg?t=st=1721770040~exp=1721773640~hmac=775489f65cef2c7dbfe2c3ca3b26b0827088c792471a53095b9f4bbf9754d7eb&w=740'),(7,'Tecnología','https://img.freepik.com/free-vector/modern-desktop-compute-concept-illustration_114360-12156.jpg?t=st=1721770581~exp=1721774181~hmac=3cb6bf079cb47460e00a85978621e3f1fead4526f1f0fca4fbabd71818d9c32d&w=900'),(8,'Automotriz','https://img.freepik.com/free-vector/car-service-abstract-concept-illustration_335657-3737.jpg?t=st=1721771316~exp=1721774916~hmac=a7c2c705bc45bab3a550355ec048b71b02e8f650af640676e7d383f2e84a6e21&w=740'),(9,'Mascotas','https://img.freepik.com/free-photo/young-brown-french-bulldog-playing-isolated-white-studio-wall_155003-31893.jpg?t=st=1721770793~exp=1721774393~hmac=71b80d92d52ad49007d8650d21aba8a73e1dcd0cc609fb6bcbc254c19752affb&w=900');
+/*!40000 ALTER TABLE `categorias` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `servicios`
+--
+
+DROP TABLE IF EXISTS `servicios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `servicios` (
+  `id_servicio` int NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(100) DEFAULT NULL,
+  `Descripcion` varchar(100) DEFAULT NULL,
+  `Costo` decimal(10,2) DEFAULT NULL,
+  `Direccion` varchar(200) DEFAULT NULL,
+  `Ubicacion_Servicio` varchar(100) DEFAULT NULL,
+  `Categoria_Servicio` varchar(100) DEFAULT NULL,
+  `imagen_url` varchar(255) DEFAULT NULL,
+  `id_usuario` int DEFAULT NULL,
+  `id_categoria` int DEFAULT NULL,
+  `id_administrador` int DEFAULT NULL,
+  PRIMARY KEY (`id_servicio`),
+  KEY `fk_servicio_usuario` (`id_usuario`),
+  KEY `fk_servicio_categoria` (`id_categoria`),
+  KEY `fk_servicio_administrador` (`id_administrador`),
+  CONSTRAINT `fk_servicio_administrador` FOREIGN KEY (`id_administrador`) REFERENCES `administradores` (`id_administrador`),
+  CONSTRAINT `fk_servicio_categoria` FOREIGN KEY (`id_categoria`) REFERENCES `categorias` (`id_categoria`),
+  CONSTRAINT `fk_servicio_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `servicios`
+--
+
+LOCK TABLES `servicios` WRITE;
+/*!40000 ALTER TABLE `servicios` DISABLE KEYS */;
+INSERT INTO `servicios` VALUES (1,'Servicio de reparación de aire acondicionado','Reparación y mantenimiento de sistemas de aire acondicionado',85.00,NULL,'Avenida Fresca #789',NULL,'https://irp.cdn-website.com/02e09d90/MOBILE/jpg/478.jpg',NULL,NULL,NULL),(2,'Servicio de diseño web','Diseño y desarrollo de sitios web personalizados',150.00,NULL,'Estudio WebTech #456',NULL,'https://diseno-web-df.com/images/diseno-web.png',NULL,NULL,NULL),(3,'Servicio de fotografía de eventos','Cobertura fotográfica profesional para eventos',120.00,NULL,'Estudio Captura #321',NULL,'https://vivirdelafotografia.es/wp-content/uploads/markleting-de-las-4-p-01-servicio-fotografico.jpg',NULL,NULL,NULL),(4,'Servicio de reparación de persianas','Reparación y instalación de persianas y cortinas',70.00,NULL,'Local Persianas Express #234',NULL,'https://mihogardulcehogar.com/wp-content/uploads/2020/01/reparaci%C3%B3n-de-persianas-face-.jpg',NULL,NULL,NULL),(5,'Servicio de asesoría nutricional','Asesoramiento nutricional personalizado',55.00,NULL,'Consultorio NutriVida #567',NULL,'https://aprende.com/wp-content/uploads/2021/12/como-hacer-una-consulta-exitosa-infografia.jpg',NULL,NULL,NULL),(6,'Servicio de Consultoría','Consultoría especializada en gestión empresarial.',150.00,NULL,'Oficina Principal',NULL,'https://irp.cdn-website.com/7a848e1e/dms3rep/multi/Servicios+de+consultor%C3%ADa.jpg',NULL,NULL,NULL),(7,'Entrenador de futbol','Creación y mantenimiento de sitios web personalizados.',500.00,NULL,'Oficina Secundaria',NULL,'https://clupik.com/wp-content/uploads/2020/02/football-g9284d5207_1920.jpg',NULL,NULL,NULL),(8,'Soporte Técnico','Soporte técnico especializado para hardware y software.',100.00,NULL,'Centro de Soporte',NULL,'https://www.ufv.es/cetys/blog/wp-content/uploads/2022/11/2011.i039.022.web-hosting-isometric-scaled.jpg',NULL,NULL,NULL);
+/*!40000 ALTER TABLE `servicios` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `transacciones`
+--
+
+DROP TABLE IF EXISTS `transacciones`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `transacciones` (
+  `id_pago` int NOT NULL AUTO_INCREMENT,
+  `tipo_de_pagos` varchar(50) DEFAULT NULL,
+  `Fecha` date DEFAULT NULL,
+  `Hora` time DEFAULT NULL,
+  `id_usuario` int DEFAULT NULL,
+  PRIMARY KEY (`id_pago`),
+  KEY `fk_usuario_transacciones` (`id_usuario`),
+  CONSTRAINT `fk_usuario_transacciones` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `transacciones`
+--
+
+LOCK TABLES `transacciones` WRITE;
+/*!40000 ALTER TABLE `transacciones` DISABLE KEYS */;
+/*!40000 ALTER TABLE `transacciones` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usuarios`
+--
+
+DROP TABLE IF EXISTS `usuarios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `usuarios` (
+  `id_usuario` int NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(50) DEFAULT NULL,
+  `Apellido` varchar(50) DEFAULT NULL,
+  `Correo` varchar(50) DEFAULT NULL,
+  `Contraseña` varchar(20) DEFAULT NULL,
+  `Telefono` varchar(12) DEFAULT NULL,
+  PRIMARY KEY (`id_usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuarios`
+--
+
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping events for database 'magus'
+--
+
+--
+-- Dumping routines for database 'magus'
+--
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-07-28  0:54:36

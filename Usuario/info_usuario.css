@@ -1,0 +1,149 @@
+:root {
+    --radiant-orange: #ff3700;
+    --fog-gray: #F2F4F7;
+    --coal-black: #141517;
+    --text-color: #2c3e50;
+}
+
+    
+body {
+    font-family: "Lato", sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.nav-conteiner {
+    background-color: var(--radiant-orange);
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center; /* Ensure items are centered vertically */
+    padding: 0 1em; /* Add some padding to the container */
+}
+  
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 3em;
+    text-decoration: none;
+    transition: transform 0.3s ease; /* Add transition for smooth scaling */
+}
+  
+.logo:hover {
+    transform: scale(1.25); /* Scale up the logo on hover */
+}
+  
+.nav-links {
+    display: flex;
+    margin-right: 3em;
+}
+  
+.nav-links a{
+    margin-left: 1em; /* Add some space between the links */
+    color: white;
+    text-decoration: none;
+    align-self: center; /* Ensure links are centered vertically */
+    padding: 10px;
+    border-radius: 15px;
+}
+  
+  
+.nav-links a:hover{
+    transition: .5s ease-in-out;
+    background-color: #2c3e50;
+}
+
+.profile-container {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    align-self: center;
+
+}
+
+.sidebar {
+    width: 700px;
+    background-color: #fff;
+    padding: 80px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-header {
+    text-align: center;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.profile-name {
+    margin: 10px 0;
+    font-size: 30px;
+}
+
+.profile-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-nav a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 20px 0;
+    border-bottom: 5px solid #ddd;
+}
+
+.profile-nav a:hover {
+    background-color: #f0f0f0;
+}
+
+.sidebar{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+.profile-details h2,
+.profile-history h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.profile-details ul,
+.activity ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-details li,
+.activity li {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.activity {
+    margin-top: 20px;
+}
+
+.activity strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: gainsboro;
+    color: #666;
+}
